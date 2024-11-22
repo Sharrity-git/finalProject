@@ -1,3 +1,15 @@
+---
+navPages:
+    -   title: Home
+        url: /index.html
+    -   title: Instruments & Gear
+        url: /instruments
+    -   title: School
+        url: /school
+    -   title: Repairs
+        url: /repairs
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,31 +22,11 @@
     <header>
         <nav>
             <ul>
-                <li>
-                    <a href="index.html" class="selected">
-                       Home
-                    </a>
-                </li>
-                <li>
-                    <a href="/instruments">
-                       Instruments & Gear 
-                    </a>
-                </li>
-                <li>
-                    <a href="/school">
-                       Music School 
-                    </a>
-                </li>
-                <li>
-                    <a href="/repairs">
-                       Repairs 
-                    </a>
-                </li>
-                <li>
-                    <a href="/about">
-                       About 
-                    </a>
-                </li>
+                {%- for entry in navPages %}
+                    <li{% if entry.title == name %} class="selected"{% endif %}>
+                        <a href="{{ entry.url }}">{{ entry.title }}</a>
+                    </li>
+                {%-endfor %}
             </ul>
         </nav>
 
