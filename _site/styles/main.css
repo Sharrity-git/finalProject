@@ -4,6 +4,10 @@ body {
     margin: 0;
 }
 
+.logo {
+    width: 50px;
+}
+
 h1 {
     text-align: center;
     color: #F8F8F8;
