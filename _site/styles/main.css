@@ -1,32 +1,50 @@
+:root {
+    --background: #0B192C;
+    --accent: #D2612D;
+  }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #0B192C;
+    background-color: var(--background);
     margin: 0;
 }
 
-.logo {
-    width: 50px;
-}
-
-h1 {
+h1, h2 {
     text-align: center;
     color: #F8F8F8;
-}
-h2 {
-    text-align: center;
-    color: #FFFFFF
 }
 
 header {
     display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 60px;
 }
+
+.welcome {
+    max-width: 40%;
+}
+
+.gibson-group {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.logo {
+    max-height: 140px;
+}
+
 
 nav {
     display: flex;
     width: 100%;
+    max-height: 40px;
     border: 1px solid black;
-    background-color: #D2612D;
+    background-color: var(--accent);
     padding-top: 0;
 }
 
@@ -34,30 +52,32 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 70%;
     flex-wrap: wrap;
-    padding: 0;
+    margin: .4em;
+    padding-top: 0;
 }
 
 nav ul li {
     display: flex;
     align-content: flex-start;
-    margin: .2em
+    margin: 0;
+    padding-top: 0;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #F8F8F8;
-    font-weight: 550;
+    color: white;
+    font-weight: 400;
     font-size: 24px;
 }
 
-li.selected a {
+a.selected {
     text-decoration: underline;
 }
 
 .storefront-image {
-    max-width: 50%;
+    max-width: 120%;
     height: auto;
 }
 
@@ -66,3 +86,50 @@ li.selected a {
     justify-content: center;
     align-items: center;
 }
+
+.text-overlay {
+    position: absolute;
+    top: 50; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    width: 100%;
+    
+  }
+
+  .info-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1.5em; /* Larger font for emphasis */
+    font-weight: bold;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  .direction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    gap: 20px;
+    margin: 0;
+  }
+
+  .orange-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .04em 0em; /* link size, padding allows sinking effect */
+    font-size: 1em;
+    font-weight: 550;
+    color: white;
+    background-color: var(--accent);
+    text-decoration: none;
+    width: 7em;
+    height: 2em;
+    border-radius: 5em;
+
+  }
