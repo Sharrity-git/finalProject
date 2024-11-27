@@ -32,7 +32,7 @@ header {
     justify-content: center;
     align-items: center;
     font-weight: 500;
-    gap 5px;
+    gap: 8px;
 }
 
 .logo {
