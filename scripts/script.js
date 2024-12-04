@@ -12,7 +12,7 @@ const updatePagination = (tab, index) => {
 const swiper = new Swiper(".slider-container", {
     effect: "slide,",
     speed: 1300,
-    // autoplay: { delay: 8000},
+    autoplay: { delay: 8000},
     navigation: {
         prevEl: "#slider-left",
         nextEl: "#slider-right"
