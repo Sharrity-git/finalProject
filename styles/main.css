@@ -163,13 +163,10 @@ nav ul li a {
   } 
 
    .orange-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     padding: 4px 25px;
     font-size: 1em;
     font-weight: 550;
-    /* color: white; */
     background-color: var(--accent);
     text-decoration: none;
     border-radius: 5em;
