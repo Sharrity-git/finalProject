@@ -1,37 +1,20 @@
-const sliderTabs = document.querySelectorAll(".slider-tab");
-const sliderIndicator = document.querySelector(".slider-indicator");
+document.querySelectorAll('.dropdown-block').forEach((dropdown) => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const content = dropdown.querySelector('.dropdown-content');
+    const arrow = toggle.querySelector('.dropdown-arrow');
 
-// update the indicator height and width
-const updatePagination = (tab, index) => {
-    sliderIndicator.style.transform = `translateX(${tab.offsetLeft - 20}px)`;
-    sliderIndicator.style.width = `${tab.getBoundingClientRect().width}px`;
-};
+    // Toggle the current dropdown
+    toggle.addEventListener('click', function (e) {
+        e.stopPropagation(); // Prevent clicks on the toggle from triggering the block click
+        content.classList.toggle('open');
+        arrow.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+    });
 
-
-// initialize swiper instance
-const swiper = new Swiper(".slider-container", {
-    effect: "slide,",
-    speed: 1300,
-    autoplay: { delay: 8000},
-    navigation: {
-        prevEl: "#slider-left",
-        nextEl: "#slider-right"
-    },
-    on: {
-        // update pagination on slide change
-        slideChange: () => {
-            const currentTabIndex = [...sliderTabs].indexOf(sliderTabs[swiper.activeIndex]);
-            updatePagination(sliderTabs[swiper.activeIndex], currentTabIndex);
+    // Close the dropdown if clicking anywhere inside the block while open
+    dropdown.addEventListener('click', function () {
+        if (content.classList.contains('open')) {
+            content.classList.remove('open');
+            arrow.style.transform = 'rotate(0deg)';
         }
-    }
-});
-
-sliderTabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
-        swiper.slideTo(index);
-        updatePagination(tab, index);
     });
 });
-
-updatePagination(sliderTabs[0], 0);
-window.addEventListener("resize", () => updatePagination(sliderTabs[swiper.activeIndex], 0));
