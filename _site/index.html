@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/styles/main.css"> 
+    <!-- <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
     <link rel="scripts" href="/scripts/script.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +16,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="nav-bar">
             <ul>
                     <li class="selected-page">
                         <a href="/index.html">Home</a>
@@ -28,6 +31,38 @@
                         <a href="/repairs">Repairs</a>
                     </li>
             </ul>
+            <div class="nav-media">
+                <a href="https://x.com" target="_blank">
+                    <svg width="40" height="30" viewBox="-5 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="40" height="35" fill="url(#pattern0_305_61)"/>
+                        <defs>
+                        <pattern id="pattern0_305_61" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_305_61" transform="matrix(0.00304878 0 0 0.00348432 0 -0.0261324)"/>
+                        </pattern>
+                        <image id="image0_305_61" width="328" height="302" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUgAAAEuCAYAAADsuYt0AAAAAXNSR0IArs4c6QAAGoJJREFUeF7tnbF2HkUPhvevqWnimgoal7hw0qQE6nRw4BpIfAUxuYZw4BaICwqaQGFXHBqoXIeGmtr/2SQG8+WzVzM7elczetJGu6N5pHl3Vqtv/L+JfxCAAAQgsJfA/+ACAQhAAAL7CSCQZAYEIACBWwggkKQGBCAAAQSSHIAABCBQRoAdZBkvrCEAgUQEEMhEwWaqEIBAGQEEsowX1hCAQCICCGSiYDNVCECgjAACWcYLawhAIBEBBDJRsJkqBCBQRgCBLOOFNQQgkIgAApko2EwVAhAoI4BAlvHCGgIQSEQAgUwUbKYKAQiUEUAgy3hhDQEIJCKAQCYKNlOFAATKCCCQZbywhgAEEhFAIBMFm6lCAAJlBBDIMl5YQwACiQggkImCzVQhAIEyAghkGS+sIQCBRAQQyETBZqoQgEAZAQSyjBfWEIBAIgIIZKJgM1UIQKCMAAJZxgtrCEAgEQEEMlGwmSoEIFBGAIEs44U1BCCQiAACmSjYTBUCECgjgECW8cIaAhBIRACBTBRspgoBCJQRQCDLeGENAQgkIoBAJgo2U4UABMoIIJBlvLCGAAQSEUAgEwWbqUIAAmUEEMgyXlhDAAKJCCCQiYLNVCEAgTICCGQZL6whAIFEBBDIRMFmqhCAQBkBBLKMF9YQgEAiAghkomAzVQhAoIwAAlnGC2sIQCARAQQyUbCZKgQgUEYAgSzjhTUEIJCIAAKZKNhMFQIQKCOAQJbxwhoCEEhEAIFMFGymCgEIlBFAIMt4YQ0BCCQigEAmCjZThQAEygggkGW8sIYABBIRQCATBZupQgACZQQQyDJeWEMAAokIIJCJgs1UIQCBMgIIZBkvrCEAgUQEEMhEwWaqEIBAGQEEsowX1hCAQCICwwnkJ598cvXhhx8mCmHdVP/666/p22+/HS7+dTT6uurjjz++un//fhin//jjj+ns7GzIXBpuUh988MHVy5cvp3v37oVJoKiOnJycTKenp8PlQFTeLfya8/u3336b3nvvvRa3W32PP//8c3rw4MF0eXk5ZB4NOal5F/nixYvVwc9wg6Ojo+ni4mLIPBgxfq9evbqK8vD/+++/p4cPHw6dP8MujG+++ebq66+/HnGNNJ3TvAM4ODgYNg+awtr4Zr///nuY8tEsjo8ePRr21fo61EMvjJ9//vnq+Ph447SOP/wvv/wy3b9/f+hciB+Fuz384Ycfrj799NMw0/jqq69S1LCHXxSRXknCZPceR549ezY9fvx4+HyIHIPbfPvuu++uPv/88zCuZ8qV4RfE/MXv/Pw8THJFdoR6ZLzoPHny5Orp06dhHPv++++nL774YnjdSPGKfT3JaEkWJtt3HKEeGSsyX3755dXz58/DOJWxFJPmSRCthhMm63ccybgIIsZifvP56aefwrTzzL2OH330URq9SLWDvJ5spK+AERfltU+ZakwR40CvY5yopHoiRHsqx0mDdz2Zv5iO+uuIyNxn3yJ9WMzQ63hXPqQSyBlEtLpO1MU6+i8konKP9JaTpdcRgdwhEK1tIupipR6pjUy0OnmWXkcEcg+BSE9q7TIsG416ZBmvWutoD23i/iaS6V6xrxM4WiG8dmEprqMe6Us5Whtatl5HdpC3EOBQC9vCn2tRh4eHw57YYqPgYxWtJk5Z5b9xTruDvMbAoRa2hc/CsXEqsYrWVZG115Ed5ELWcqiFbVnz6mXjZLGKVuKha2F/1NLvIGcsHLJrWdJvbKhH2lndZUmvYxuO3ndBIN8Sph5pSzXqkTZOd1lF66DgoXd7tBDIG2yoR9oWP7UqG6d9VvQ61rPb4koEcoe6qh7p9dFD5T/1yPLlSq9jObOtr0Ag90RAVR/yasZV+c8vLezLl15HO6tIlgjknmgoD9n1qP+o/KceaVvK9DraOEW0QiBviYrqie8lMir/qUfevazpdYwoe3afEMg7WKkK6l4io/KfeuT+JKLX0S5EUS0RyIXIqFoyvESGeuR2S0/F3jLD7Oc6Whjts0EgF8gpX5E8PnpQj6xdGuuuUz1YrV561LqtY/dsh0AaoqcqslOPNASjAxNVacOKwuPBax27dzsE0hhBVQ8b9UhjQIKaqfLEOn2vVjLr+L3bIZAFEVS9NlGPLAhKIFNV54B1yl55ZB1/BDsEsiCKyq+SHq9Fynrkw4cPp4uLizT5pSrDWNPV65da1vFHsUuTwK0CpjrUwuuro2qXMx+fdXBwkCK/lB/yLHnsVaaxjD2aTYoEbh001aEWXiKj+ojw4sWL6bPPPhs6x5RvFZY85lxHCyW7zdDJa8dQbqk6FMJLZFQ9eicnJ9Pp6emweabiaMlQr7cOy9ij2gybuN4BUx6y6yEyqtfCkRet6qOdNZfpdbSSstshkHZW71iq6pHzwEdHR80/eqg+LHiVClaEbvWlqjKF1VGPj3rWsUe2QyBXRrf3eqSqb8+rVLAyfFWXq5hZnaPX0Uqq3A6BLGf2zhWqeqRX64bqVdGjVNAgfEW3UHUBWJ2i19FKqs4Ogazj9s5VqmK9x25BVY/0KhU0CuHibVQliUVH3hp4PTCt42ewQyAbRVnVhD2761GMVy3+XuuRyoeIJSXpdbRQWm+DQK5n+M8dVK9fXodaqGprve186HVsuEg6uxUC2Thgqq+bXiJDPfLdhFCVTyypOHLblGX+ahsE0oG4SmQ8CvTK3ZJH61LrcKpiafXbo7xiHTujHQLpEHVlvcqj/4165JukUL0NWFPQI9bWsbPaIZBOkVeJDPVInwCq6rFW7z26F6xjZ7ZDIB2jr1pkXl80Va+X0Ra/6mObNfU8SinWsbPbIZDOGaASGY9FpKxHRqmtqXb+1rTz+hhnHT+7HQLpnAFKkfGoUal+bx6hP1JZO7akndebgWVsbN4QQCAFmaASGa8WENXvzbfcLSkfZJaU41xHCyV/GwTSn/HrEVQi47UTU5UKtqpH0usoWgidDYNACgOmOtTC4+Qc5Q5LXY9Uib811dTzt/qV0Q6BFEa990N2laWCw8PD6fLy0j0/6XUULoAOh3JPwA6ZuLqsEpl5Eh6/VFGVChT1SFUbljWhtiovWP3LaIdAbhB1lch41SNVpQJPwaDXcYPE73BIBHKjoKlExmMnpiwVeNTj6HXcKOk7HBaB3DBoqi+nHjsxVamg9U8p6XXcMOE7HBqB3DBovR+yqyoVtGqYVn6Jt6QVvY4WStvaIJDb8p9UtbDWO7FrbKpSQYufUqp27JaU8mrqt4yNjZ0AAmln5WapajVptRO7CaKXeiS9jm7pO/SNEcgg4VUt4BY7sV1k0euRqgeQNZU8fjNvHRu7MgIIZBkvN2vlxwOPBRq1Hkmvo1vKprgxAhkozKr2kyz1SFV915pCHrt369jY1RFAIOu4uV2l2vF41CNnKKoPIUu7YNXDxpoIHv2o1rGxqyeAQNazc7uy53qkqnXprl2wslxhSQKvh5FlbGzWEUAg1/FzuVrZr7e0E6uZoOrVdp/wKNlZ2NDraKEU1waBDBob1Zfhefoeh1qovhzv1vVUr/iWtKHX0UIptg0CGTg+qi/DXodaqMTqehesKk1YU8bjd+TWsbFrQwCBbMPR7S6qX6p4HLKrrEf++uuv0/HxsVscSm/sUboo9QH79QQQyPUMXe+g/KXKycnJdHp62jQnVPVI1yAU3tzjcJBCFzBvRKDpYmjkE7fZIUA9sp+UoNexn1hZPEUgLZQC2FCPDBCEBRfodYwfo1IPEchSYhvaq+qRHgs9Wm9i6zDS69iaaIz7IZAx4mD2QvVl2KOONmo9kl5Hc/p2Z4hAdhYy1ZfhGYtHm4qqP1IVVnodVaS3GQeB3Ib7qlFVOzGvQy2i9SuuCYbHQ2SNP1zblgAC2Zan7G6qnZhHbW2UeiS9jrJ032wgBHIz9OsHVu3EPFpXop22UxoNjxptqQ/Y+xNAIP0Zu42g3Il57JZUR7u1DoDHA6O1j9yvDQEEsg3Hze6i2olRj3wTYo8WqM2Sh4EXCSCQi4jiG6h2Yh71yGjHk90VbY/5x8+u3B4ikIPEX1WP9DjUQrULXhNqeh3X0Ov3WgSy39j9x3PlTixbPZJex0EWScU0EMgKaFEvUR1q4SUYql1wafzodSwlNo49AjlOLF/PpOdDLZS7YGvYPXbL1rGx254AArl9DJp7oDrUYvR6JL2OzVOzuxsikN2FbNnh3g/ZVX2Vv4skvY7LeZbBAoEcNMqqeuSMz+OPfm1Zj6TXcdBFUTEtBLICWi+XUI8sjxS9juXMRr4CgRw5utM0qeqRHrsu5S54TgN6HQdfDBXTQyAroPV2Sc+H7Kp2wV6lgt5yBX//SwCBTJARvR+yq9oF89U6wWIonCICWQisV/OeD9lV9kfSFN5rhvv4jUD6cA15154P2VXVI6lDhkzdzZxCIDdDv83AqvYZjz5CVT3S44PTNtFm1LUEEMi1BDu7vvdDdqlHdpZwnbuLQHYewBr3VceLeRyyq/yVEPXImuwa6xoEcqx4mmej+jmfR+O1qh7pIfDmAGEYggACGSIM2zihqkd6HGpBPXKbnMk2KgKZLeI35qtsn/E4Nox6ZOLkFU0dgRSBjjqM6nV1nr/HoRaqXwlRj4yawb5+IZC+fLu4u+p1de4xPDg4aJpzql8JUY/sIpWbO9k0WZt7xw1lBFSvqx71SNWvhDw+OMkCzEBVBBDIKmzjXaRsnzk5OZlOT0+b5p5K4D0a4MfLpnFm1DRJx8GScybUI21x9/jgZBsZKzUBBFJNPPh41COXA0Q9cpnRKBYI5CiRbDgP1euqx2+eqUc2TARuNSGQJMFeAqr2GY8zGFWnFlGPHH/xIJDjx7hqhqr2mdk5jx5DlcBTj6xKr24uQiC7CZXeUdXrqkdNTyXwHr7rI82ItxFAIMmNOwmoXlc9egxVAu/hO2kZgwACGSMOob1QHWrhUdNTCbyH76GTIolzCGSSQK+ZZu+H7FKPXBP93NcikLnjb559z4fsqgR+rkc+fPhwuri4YF2ZMyu2IYGMHZ9Q3vV8yK5K4KlHhkrZ1c4gkKsR5rqBqh7pcaiFqh7p4XuuLIszWwQyTiy68KT3Q3ZVAu9xIEcXCTKYkwjkYAH1no6qnnc9j9aH7Kr8px7pnYma+yOQGs5DjKI8Eu0amMchu6p6pIfvQyRSR5NAIDsK1tauql5Pd+fpUdNTfXDy8H3rPMg0PgKZKdor5qo64ec2Fz1qeirB9/B9RSi5tIAAAlkAK6up6uvvEt/W9UjlB6fWvi+x4v/bEEAg23Ac9i6qA3QtAD1qetQjLeTz2iCQeWO/OHOVeCw6csPA45Bd6pElEchli0Dmird5tsq/T2N26q2hxyG71CNLo5DDHoHMEeeiWap6BYuc2jFufcgu9cg10Rj3WgRy3NhWzWyLXscaRz0OqlXtmj1qqTUMuWaZAAK5zCiVhepVswVUj4MhVPVIj1pqC6bc478EEEgy4h8CW/c61oTC46Ba1UPCo5Zaw5BrbieAQJIdrwlE6XWsCUfrP5ylrEe2rqXW8OMaBJIcuINApF7HmkBRj6yhxjUWAuwgLZQGtonY61iD26MeqXpwUI+sibjmGgRSwznkKKqvtqrJexwMoarLUo9UZUnZOAhkGa9hrHvodayB3fpgCOqRNVEY5xoEcpxYmmfSS6+jeUI3DD0OqlXttD1qqTUMueZfAghkwmxQtbFshdajEZt65FbR3HZcBHJb/vLRVTU1+cR2BqQeuXUExhgfgRwjjqZZ9NzraJrgjpFHPfLly5fTvXv3atwpuob+yCJcbsYIpBvaWDdWvSLGmvU0tRYa6pHRIuzrDwLpyzfE3aP1Os59fz/++OP09OlTdz491yM9ejvdgQ82AAI5WEB3p6Pa8Vgx3lz0qld+j0ZsVS3X47fm1lhhN00I5MBZEK3Xcd9u7tWrV1eKmp5HI7bK99ZlgoFTvvnUEMjmSGPcMFqv4209fkoRby00s+/n5+fuAac/0h3xrQMgkNuxdx05Uq/jvMAfPXo0nZ2d7c23J0+eXCnqkR5Co/KdeqTrckEgt8G7zaiq+ph1dpbjyFQH1XoIjaqWSj3SmnHt7NhBtmMZ4k6qxWqdbEkvomrX6yE0qnqk5WFjjQ12ywQQyGVG3VhE63UsFSLlwRCthYZ6ZDfLpMhRBLIIV1zjaL2OtT/1U82DemTcXI7kGQIZKRqVvkTudayZEvXIZWqlu/PlO2KxjwAC2XleKNtkLKha/XJFVY+s3enexYJ6pCVT+rBBIPuI014ve+l1rEGsrEeWfEiyzEX10PI4+9Iyv0w2CGTH0VbtsiyIlnodLffYtVGVDjyEhv7ImojHuwaBjBcTk0c99jqaJrZjpPoy36o0cNN9VcuVR5mgJlYjXoNAdhhV1cKzomn9iro7ruph4CE0ql1+67Yla+xHt0MgO4uwakdlxaL6mqr68NH6UAvqkdZMimmHQMaMy16vVD2CViQeO67bxlY1Ys/jtz7UQhU3jzKBNRdGtUMgO4ms6oOFFYfHb5qXxlZ9+PAQGlVvp/KhtRSvEf4fgewgiqrXNCsKDwGxjq2qv3ocsquqR3rXhK2xGsEOgQwexZF7HWvR91qPVPV2erQt1caq9+sQyOARVO06LBg8eh0t4+7aKHfU1CNrIjTONQhk4Fiq2lusCCK1kqg+fHgcakE90ppx29shkNvHYK8HqlqbdfoR61oqofH4IKV6M4gYN2vORbBDICNEYceHrL2ONaFQCU3rfk9VPXJmenR0NF1cXLDWKxIMaBXQPC9RvTpa5xC9bUQpNK1LDKpYb9l1YM2zqHYIZKDI0OtYFwyV0PRcj/RoW6qLVl9XIZBB4qX8MmuZcm+7DuqRy1GlHrnMaNcCgSxn1vwKeh3bIFXVI1uXHZRlgtZtS20iF/cuCGSA2KgWtmWqUXodLb7u2iiFpvVuTFVe6e3NoCYPWl6DQLakWXEveh0roN1xiUpoPH6toioTUI+05xwCaWfV3JJex+ZIX99Q1SblsRtTvU20PtbNJ5Lb3xWB3CgGqkVsnV7rPj/ruF52qp059UivCMa4LwK5QRxUbSnWqbVe5NZxve1Uh1r0XI988ODBdHl5iQ7ckoyA8V6lO/dX1cis0/L4GZ11bG87JevWX4dVbxjUI+/OQgTSe5XeuD+9jkLYb4fq+ZBdVZmAeuTteYlAitYsvY4i0HuGUX0Ma70bU+ZM6x3wdtFuOzIC2ZbnrXdTfZ20TKfnXkfL/PbZqOqRrXdjqjKBx88oa2MV6ToEUhAN1auSdSqtD12wjrulnbK80Xo3Rj1yu8xBIJ3Zq17vrNNo/cXVOm4EO1X3gMduTPWQbb0DjhD3NT4gkGvoLVyrevJbpzBar6N13jftVA8sj+4AVZmg9Q64Jk5RrkEgnSKh2q1Y3R+119E6/5t2qnpw6wcS9ciaaK+7BoFcx2/v1apEtrrusZuxjh3RTnmoRet6r6ptiZx5k7kIZOMVrPwYYHHd4/fClnGj26h2+D3XI1vvgKPnxD7/EMiGUVP2rVnc9liclnF7sVGdnuPxkFLVI1vvgHvJjWs/EciGEVPVtqwu88ealkmpYta6Bjy/qZyfny9PcKVF9ocsArkyga4vV7VhWN3N/uS3clLWI1u3WFGPtEa53g6BrGf3z5Wq1hGrq60XonXcXu1UH9U8DtlV5V7WeiQCuXJV0+u4EmCQy1VxpB4ZJOBGNxBII6h9ZqovoVYXW9e5rOOOYqcqk7Q+1IJ6pF8GIpCVbFWvZVb36FuzkrrbTvV1uHUZhHpkm/jv3gWBrOBKr2MFtE4uUe3GZhytf9JHPbJ9kiGQhUzpdSwE1qG5ajc21yNb/8kD1Q44S5cEAlm4gFV9c1a36HW0kiqzU+3G5nrkLDat/h0fH0/Pnz9vdbtb7+PxRd7d6YoBEMgCaKoivtWlLE9xK4/WdqrdWGu/VffLUPdGII3ZpPpZmtGdqXWR3zpuJrtoteaI7EfvnEAgDVmn6pEzuPLaJGvTrpVPS7torVwt59bqXiM/rBHIhSyJtkBGf2K3WrQt7xPt7aHl3Frca+R6JAJ5R4bQ69hi+Yxxj2gf56JR9fiFUIQ5IpC3RCFa/WnUBIywCCw+KA+1sPgT0WbEtxsEck+m0esYcflt71O0csv2RN71YLR6JAK5J8uivU7R6xhHCqhHLsdipHxFIHfiTa/j8gLIbhHtARotHiOVgxDIG9kVbXcw2utKtIVc6w/1yGVyo9QjEci3sabXcTnpsfiXQLQOh4ixGeEBj0BO0xSt+D7K0zfiom3pU7SHasu5tbpX7/XI9AIZbSeQ4fetrRZfhPtEq1lHYHLTh97rkakFkl7HaMupT3841OLuuLU+QV2ZJWkFkl5HZZqNPZbykN1eST579mx6/Phxd3rTncOtEiRaq0bvtZpWcen1PqpDdnvlM/vd+gR1BYuUAhmtbsS5jopU9x9Ddciu/0x8RuixHplOIOl19El+7vqGAPXIseqRqQQyWlsG5zqOJ6vRPvxFJNxTPTKNQNLrGHGpjOlTtFyLSLmXemQKgaTXMeISGdunaKWcaLTnQ3YPDw+ny8vL0BoU2rlWQZ2f6O+//36r262+z+npaQruq0F1foP5y3bnU3B1f/5RxNnZWei1ENo51+hwcwhAAAILBBBIUgQCEIDALQQQSFIDAhCAAAJJDkAAAhAoI8AOsowX1hCAQCICCGSiYDNVCECgjAACWcYLawhAIBEBBDJRsJkqBCBQRgCBLOOFNQQgkIgAApko2EwVAhAoI4BAlvHCGgIQSEQAgUwUbKYKAQiUEUAgy3hhDQEIJCKAQCYKNlOFAATKCCCQZbywhgAEEhFAIBMFm6lCAAJlBBDIMl5YQwACiQggkImCzVQhAIEyAghkGS+sIQCBRAQQyETBZqoQgEAZAQSyjBfWEIBAIgIIZKJgM1UIQKCMAAJZxgtrCEAgEQEEMlGwmSoEIFBGAIEs44U1BCCQiAACmSjYTBUCECgjgECW8cIaAhBIRACBTBRspgoBCJQRQCDLeGENAQgkIoBAJgo2U4UABMoIIJBlvLCGAAQSEUAgEwWbqUIAAmUE/g/5Tp8QVMvxxQAAAABJRU5ErkJggg=="/>
+                        </defs>
+                    </svg>
+                </a>
+                <a href="https://facebook.com" target="_blank">
+                    <svg width="27" height="27" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.1465 14.0973H16.7838V11.3263C16.7838 10.7414 16.936 10.1667 17.3295 9.73836C17.7226 9.31045 18.3598 9.02497 19.3375 9.02497H21.3321H21.3565V9.00056V5.33748V5.31667L21.336 5.31337L21.3321 5.33748L21.3359 5.31337L21.3359 5.31336L21.3356 5.31332L21.3346 5.31316L21.3307 5.31253L21.3151 5.31009L21.2545 5.30085C21.2016 5.29289 21.124 5.28152 21.0255 5.26788C20.8286 5.24061 20.548 5.20424 20.2132 5.16788C19.5438 5.09517 18.6575 5.02242 17.7908 5.02242C15.9789 5.02242 14.4786 5.53914 13.4312 6.52635C12.3835 7.51376 11.7917 8.96914 11.7917 10.8405V14.0973H7.79765H7.77324V14.1217V18.4267V18.4511H7.79765H11.7917V27.5486H3.06166C2.25567 27.5486 1.48297 27.2471 0.913473 26.711C0.344027 26.1749 0.0244141 25.4481 0.0244141 24.6906V3.55277C0.0244141 2.79527 0.344027 2.06848 0.913473 1.53237C1.48297 0.99621 2.25567 0.694763 3.06166 0.694763H25.5138C26.3198 0.694763 27.0925 0.99621 27.662 1.53237C28.2314 2.06848 28.551 2.79527 28.551 3.55277V24.6906C28.551 25.4481 28.2314 26.1749 27.662 26.711C27.0925 27.2471 26.3198 27.5486 25.5138 27.5486H16.7838V18.4511H20.4448H20.4656L20.4689 18.4306L21.1706 14.1256L21.1752 14.0973H21.1465Z" fill="#F8F8F8" stroke="#F8F8F8" stroke-width="0.0488281"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com" target="_blank">
+
+                    <svg width="27" height="27" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="path-1-inside-1_305_57" fill="white">
+                        <path d="M14.47 7.22637C10.4133 7.22637 7.14119 10.307 7.14119 14.1262C7.14119 17.9454 10.4133 21.026 14.47 21.026C18.5267 21.026 21.7989 17.9454 21.7989 14.1262C21.7989 10.307 18.5267 7.22637 14.47 7.22637ZM14.47 18.6119C11.8485 18.6119 9.70533 16.6003 9.70533 14.1262C9.70533 11.6521 11.8421 9.6404 14.47 9.6404C17.098 9.6404 19.2347 11.6521 19.2347 14.1262C19.2347 16.6003 17.0916 18.6119 14.47 18.6119ZM23.8081 6.94413C23.8081 7.83888 23.0427 8.55348 22.0987 8.55348C21.1483 8.55348 20.3892 7.83288 20.3892 6.94413C20.3892 6.05538 21.1546 5.33477 22.0987 5.33477C23.0427 5.33477 23.8081 6.05538 23.8081 6.94413ZM28.6621 8.5775C28.5536 6.42169 28.0306 4.51208 26.3531 2.93876C24.6819 1.36543 22.6536 0.87302 20.3637 0.764929C18.0037 0.638823 10.93 0.638823 8.56997 0.764929C6.28648 0.867015 4.25813 1.35943 2.5806 2.93275C0.90307 4.50608 0.386415 6.41568 0.271603 8.5715C0.137656 10.7934 0.137656 17.453 0.271603 19.6748C0.380037 21.8307 0.90307 23.7403 2.5806 25.3136C4.25813 26.8869 6.2801 27.3793 8.56997 27.4874C10.93 27.6135 18.0037 27.6135 20.3637 27.4874C22.6536 27.3853 24.6819 26.8929 26.3531 25.3136C28.0242 23.7403 28.5473 21.8307 28.6621 19.6748C28.796 17.453 28.796 10.7994 28.6621 8.5775ZM25.6132 22.0588C25.1157 23.2358 24.1525 24.1426 22.896 24.617C21.0143 25.3196 16.5494 25.1575 14.47 25.1575C12.3907 25.1575 7.91936 25.3136 6.0441 24.617C4.79392 24.1486 3.83078 23.2418 3.32688 22.0588C2.5806 20.2874 2.75282 16.0838 2.75282 14.1262C2.75282 12.1685 2.58698 7.95898 3.32688 6.1935C3.8244 5.01651 4.78754 4.10974 6.0441 3.63534C7.92574 2.93275 12.3907 3.09489 14.47 3.09489C16.5494 3.09489 21.0207 2.93876 22.896 3.63534C24.1461 4.10374 25.1093 5.0105 25.6132 6.1935C26.3595 7.96499 26.1872 12.1685 26.1872 14.1262C26.1872 16.0838 26.3595 20.2934 25.6132 22.0588Z"/>
+                        </mask>
+                        <path d="M14.47 7.22637C10.4133 7.22637 7.14119 10.307 7.14119 14.1262C7.14119 17.9454 10.4133 21.026 14.47 21.026C18.5267 21.026 21.7989 17.9454 21.7989 14.1262C21.7989 10.307 18.5267 7.22637 14.47 7.22637ZM14.47 18.6119C11.8485 18.6119 9.70533 16.6003 9.70533 14.1262C9.70533 11.6521 11.8421 9.6404 14.47 9.6404C17.098 9.6404 19.2347 11.6521 19.2347 14.1262C19.2347 16.6003 17.0916 18.6119 14.47 18.6119ZM23.8081 6.94413C23.8081 7.83888 23.0427 8.55348 22.0987 8.55348C21.1483 8.55348 20.3892 7.83288 20.3892 6.94413C20.3892 6.05538 21.1546 5.33477 22.0987 5.33477C23.0427 5.33477 23.8081 6.05538 23.8081 6.94413ZM28.6621 8.5775C28.5536 6.42169 28.0306 4.51208 26.3531 2.93876C24.6819 1.36543 22.6536 0.87302 20.3637 0.764929C18.0037 0.638823 10.93 0.638823 8.56997 0.764929C6.28648 0.867015 4.25813 1.35943 2.5806 2.93275C0.90307 4.50608 0.386415 6.41568 0.271603 8.5715C0.137656 10.7934 0.137656 17.453 0.271603 19.6748C0.380037 21.8307 0.90307 23.7403 2.5806 25.3136C4.25813 26.8869 6.2801 27.3793 8.56997 27.4874C10.93 27.6135 18.0037 27.6135 20.3637 27.4874C22.6536 27.3853 24.6819 26.8929 26.3531 25.3136C28.0242 23.7403 28.5473 21.8307 28.6621 19.6748C28.796 17.453 28.796 10.7994 28.6621 8.5775ZM25.6132 22.0588C25.1157 23.2358 24.1525 24.1426 22.896 24.617C21.0143 25.3196 16.5494 25.1575 14.47 25.1575C12.3907 25.1575 7.91936 25.3136 6.0441 24.617C4.79392 24.1486 3.83078 23.2418 3.32688 22.0588C2.5806 20.2874 2.75282 16.0838 2.75282 14.1262C2.75282 12.1685 2.58698 7.95898 3.32688 6.1935C3.8244 5.01651 4.78754 4.10974 6.0441 3.63534C7.92574 2.93275 12.3907 3.09489 14.47 3.09489C16.5494 3.09489 21.0207 2.93876 22.896 3.63534C24.1461 4.10374 25.1093 5.0105 25.6132 6.1935C26.3595 7.96499 26.1872 12.1685 26.1872 14.1262C26.1872 16.0838 26.3595 20.2934 25.6132 22.0588Z" fill="#F8F8F8" stroke="#F8F8F8" stroke-width="0.0976562" mask="url(#path-1-inside-1_305_57)"/>
+                    </svg>
+                </a>
+                    <a href="https://gmail.com" target="_blank">                        
+                        <svg width="32" height="27" viewBox="0 0 33 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.3214 15.6595L20.3009 15.6742C20.1046 13.9505 18.5508 12.6054 16.6711 12.6054H11.2499V10.919C11.2499 9.98898 12.0514 9.23257 13.0425 9.23257H31.1856C32.1767 9.23257 32.9782 9.98898 32.9782 10.919V21.1676C32.9782 22.0976 32.1767 22.854 31.1856 22.854H20.3214V15.7017V15.6595ZM29.3713 16.065H29.393V16.0433V12.6271V12.6054H29.3713H25.7427H25.721V12.6271V16.0433V16.065H25.7427H29.3713ZM0.825887 19.4934C1.59217 20.0509 2.86979 20.9804 5.773 22.8936C5.85503 22.9516 5.94653 23.0184 6.04641 23.0913C6.38694 23.3399 6.82482 23.6596 7.31663 23.9408C7.95287 24.3044 8.68254 24.6055 9.41386 24.6055C10.1452 24.6055 10.8748 24.3044 11.5111 23.9408C12.0029 23.6596 12.4408 23.3399 12.7813 23.0913C12.8812 23.0184 12.9727 22.9516 13.0547 22.8936C15.9579 20.9804 17.2355 20.0509 18.0018 19.4934C18.1784 19.365 18.3278 19.2563 18.4637 19.1598V26.2919C18.4637 27.2219 17.6622 27.9783 16.6711 27.9783H2.1566C1.16549 27.9783 0.363987 27.2219 0.363987 26.2919V19.1598C0.499892 19.2563 0.649314 19.365 0.825887 19.4934ZM2.1566 14.3569H16.6711C17.6622 14.3569 18.4637 15.1133 18.4637 16.0433V17.0569C18.046 17.352 17.7636 17.5622 17.4456 17.7989C16.6658 18.3793 15.6722 19.1188 11.9443 21.6603C11.8058 21.7044 11.6347 21.8014 11.4435 21.9205C11.3604 21.9723 11.2738 22.028 11.1842 22.0857C11.0642 22.163 10.9387 22.2438 10.8086 22.3234C10.3548 22.6011 9.86063 22.854 9.41386 22.854C8.96725 22.854 8.47306 22.6012 8.0197 22.3024C7.79352 22.1534 7.57854 21.9936 7.38575 21.8495L7.35543 21.8268C7.17552 21.6922 7.01541 21.5725 6.8857 21.4911C3.15591 18.9483 2.16213 18.2086 1.38211 17.6281C1.06416 17.3914 0.781724 17.1812 0.363987 16.8861V16.0433C0.363987 15.1133 1.16549 14.3569 2.1566 14.3569ZM13.0425 7.48106C11.0309 7.48106 9.39215 9.02206 9.39215 10.919V12.6054H3.99262V2.37845C3.99262 1.44846 4.79412 0.692051 5.78523 0.692051H23.9284C24.9195 0.692051 25.721 1.44846 25.721 2.37845V7.48106H13.0425Z" fill="#F8F8F8" stroke="#F8F8F8" stroke-width="0.0434028"/>
+                        </svg>
+                     </a>   
+            </div>
         </nav>
 
     </header>
@@ -37,19 +72,19 @@ rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <div class="bg">
-<header>
-    <img src="/images/logo.png" alt="logo" class="logo" />
-    <div class="welcome">
-        <h1>Welcome to Simon Sounds Workers Cooperative!</h1>
-        <h2>Worker Owned Since 2019</h2>
-    </div>
-    <div class="gibson-group">
-        WE ARE A
-        <img src="/images/gibson-logo.webp" alt="Gibson dealer certificate" class="gibson" width="140" height="70" />
-        
-    </div>
+    <div class="heading">
+        <img src="/images/logo.png" alt="logo" class="logo" />
+        <div class="welcome">
+            <h1>Welcome to Simon Sounds Workers Cooperative!</h1>
+            <h2 class="byline">Worker Owned Since 2019</h2>
+        </div>
+        <div class="gibson-group">
+            WE ARE A
+            <img src="/images/gibson-logo.webp" alt="Gibson dealer certificate" class="gibson" width="140" height="70" />
+            
+        </div>
 
-</header>    
+    </div>    
 
 
 
@@ -62,8 +97,8 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
                         <div class="info-box">
                             Store Hours <br> Monday-Thursday 10am-7pm <br>Friday & Saturday 10am-6pm<br>Sundays Noon-5pm
                         <div class="direction">
-                            Located at 21 Fake Street in Downtown Northampton
-                            <a href="https://www.google.com/maps/search/guitar+center+western+mass"  class="orange-button">
+                            Located at 21 Fake Street in <br> Downtown Northampton
+                            <a href="https://www.google.com/maps/search/guitar+center+western+mass" target="_blank"  class="orange-button">
                                 Directions
                             </a>
                         </div>
@@ -74,10 +109,9 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
                 <div class="slide-content">
                     <div class="slide-content">
                         <h3 class="slide-subtitle">
-                            <div class="info-box">
-                                Store Hours <br> Monday-Thursday 10am-7pm <br>Friday & Saturday 10am-6pm<br>Sundays Noon-5pm
+                        <div class="info-box">
                             <div class="direction">
-                                Located at 21 Fake Street in Downtown Northampton
+                                Shop our selection of over 40 musical brands in store or online
                                 <a href="/instruments" class="orange-button">
                                     Shop
                                 </a>
@@ -91,12 +125,11 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
                     <div class="slide-content">
                         <h3 class="slide-subtitle">
                             <div class="info-box">
-                                Store Hours <br> Monday-Thursday 10am-7pm <br>Friday & Saturday 10am-6pm<br>Sundays Noon-5pm
                             <div class="direction">
-                                Located at 21 Fake Street in Downtown Northampton
-                                <div class="orange-button">
+                                Schedule a lesson with an experienced music instructor
+                                <a href="/school" class="orange-button">
                                     Lessons
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>                
@@ -107,12 +140,11 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
                     <div class="slide-content">
                         <h3 class="slide-subtitle">
                             <div class="info-box">
-                                Store Hours <br> Monday-Thursday 10am-7pm <br>Friday & Saturday 10am-6pm<br>Sundays Noon-5pm
                             <div class="direction">
-                                Located at 21 Fake Street in Downtown Northampton
-                                <div class="orange-button">
+                                Contact our Repair Experts to get your instruments and electronics working like new
+                                <a href="/repairs" class="orange-button">
                                     Repairs
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>               
@@ -141,15 +173,115 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/scripts/swiper.js"></script>
 </div>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt molestias sapiente repellendus tempora, accusamus provident soluta consectetur in ex at numquam, enim doloremque similique, cupiditate veniam amet vitae quae?</p>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt molestias sapiente repellendus tempora, accusamus provident soluta consectetur in ex at numquam, enim doloremque similique, cupiditate veniam amet vitae quae?</p>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt molestias sapiente repellendus tempora, accusamus provident soluta consectetur in ex at numquam, enim doloremque similique, cupiditate veniam amet vitae quae?</p>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt molestias sapiente repellendus tempora, accusamus provident soluta consectetur in ex at numquam, enim doloremque similique, cupiditate veniam amet vitae quae?</p>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt molestias sapiente repellendus tempora, accusamus provident soluta consectetur in ex at numquam, enim doloremque similique, cupiditate veniam amet vitae quae?</p>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt molestias sapiente repellendus tempora, accusamus provident soluta consectetur in ex at numquam, enim doloremque similique, cupiditate veniam amet vitae quae?</p>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt molestias sapiente repellendus tempora, accusamus provident soluta consectetur in ex at numquam, enim doloremque similique, cupiditate veniam amet vitae quae?</p>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt molestias sapiente repellendus tempora, accusamus provident soluta consectetur in ex at numquam, enim doloremque similique, cupiditate veniam amet vitae quae?</p>
+<div class="home-text">
+    <div class="history">
+        <div class="section-text history-text">
+            <h2 class="paragraph-heading"><b>History</b></h2>
+            <p>Simon Sounds is more than just a music store—it's a beloved cultural cornerstone with roots stretching back to the 19th century. Originally built as an agricultural hall in the 1880s, the building served as a hub for local farmers and tradespeople. In 1976, it was transformed into a music store called Simon TV and Music Shop, and in 1977, the name was changed to Simon Sounds to reflect its growing focus on music. A storefront renovation in 1985 gave it its now-iconic look, blending historic charm with vibrant creativity. Since 2019, Simon Sounds has been a workers' cooperative, emphasizing its commitment to community and collaboration.</p>
+        </div>
+    </div>
+    <svg class="line-breaker" width="1108" height="2" viewBox="0 0 1108 2" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 80%; height: 100%;">
+        <line x1="7.62323e-10" y1="1.3" x2="1108" y2="1.3" stroke="white" stroke-opacity="0.6" stroke-width="1.4"/>
+    </svg>
+        
+    <div class="values">
+        <div class="section-text values-text">
+            <h2 class="paragraph-heading"><b>Values</b></h2>
+            <p>At Simon Sounds Workers Cooperative, we are dedicated to empowering artists and fostering a vibrant community through music in the heart of the Pioneer Valley. We provide high-quality instruments, expert repairs, personalized lessons, and welcoming rehearsal spaces—all designed to inspire creativity and collaboration. As a worker-owned business by musicians, we are rooted in cooperation and a shared love for the art of sound, striving to make music accessible, sustainable, and transformative for everyone who walks through our doors.</p>
+        </div>
+    </div>
+    <svg class="line-breaker" width="1108" height="2" viewBox="0 0 1108 2" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 80%; height: 100%;">
+        
+        <line x1="7.62323e-10" y1="1.3" x2="1108" y2="1.3" stroke="white" stroke-opacity="0.6" stroke-width="1.4"/>
+    </svg>
+        
+    <div class="community">
+        <div class="section-text community-text">
+            <h2 class="paragraph-heading"><b>Community</b></h2>
+            <p>We believe music thrives when it's shared. That's why we're dedicated to building a strong, supportive community for musicians of all levels in the Pioneer Valley and beyond.</p>
+            <ul>
+                <li>
+                    Stay Connected: Follow us on social media to get updates on new instruments, repair tips, and events:
+                    <div class="community-social">
+                        <div class="insta">
+                            <a href="https://instagram.com" target="_blank">
+                                <svg width="27" height="27" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="path-1-inside-1_305_57" fill="white">
+                                    <path d="M14.47 7.22637C10.4133 7.22637 7.14119 10.307 7.14119 14.1262C7.14119 17.9454 10.4133 21.026 14.47 21.026C18.5267 21.026 21.7989 17.9454 21.7989 14.1262C21.7989 10.307 18.5267 7.22637 14.47 7.22637ZM14.47 18.6119C11.8485 18.6119 9.70533 16.6003 9.70533 14.1262C9.70533 11.6521 11.8421 9.6404 14.47 9.6404C17.098 9.6404 19.2347 11.6521 19.2347 14.1262C19.2347 16.6003 17.0916 18.6119 14.47 18.6119ZM23.8081 6.94413C23.8081 7.83888 23.0427 8.55348 22.0987 8.55348C21.1483 8.55348 20.3892 7.83288 20.3892 6.94413C20.3892 6.05538 21.1546 5.33477 22.0987 5.33477C23.0427 5.33477 23.8081 6.05538 23.8081 6.94413ZM28.6621 8.5775C28.5536 6.42169 28.0306 4.51208 26.3531 2.93876C24.6819 1.36543 22.6536 0.87302 20.3637 0.764929C18.0037 0.638823 10.93 0.638823 8.56997 0.764929C6.28648 0.867015 4.25813 1.35943 2.5806 2.93275C0.90307 4.50608 0.386415 6.41568 0.271603 8.5715C0.137656 10.7934 0.137656 17.453 0.271603 19.6748C0.380037 21.8307 0.90307 23.7403 2.5806 25.3136C4.25813 26.8869 6.2801 27.3793 8.56997 27.4874C10.93 27.6135 18.0037 27.6135 20.3637 27.4874C22.6536 27.3853 24.6819 26.8929 26.3531 25.3136C28.0242 23.7403 28.5473 21.8307 28.6621 19.6748C28.796 17.453 28.796 10.7994 28.6621 8.5775ZM25.6132 22.0588C25.1157 23.2358 24.1525 24.1426 22.896 24.617C21.0143 25.3196 16.5494 25.1575 14.47 25.1575C12.3907 25.1575 7.91936 25.3136 6.0441 24.617C4.79392 24.1486 3.83078 23.2418 3.32688 22.0588C2.5806 20.2874 2.75282 16.0838 2.75282 14.1262C2.75282 12.1685 2.58698 7.95898 3.32688 6.1935C3.8244 5.01651 4.78754 4.10974 6.0441 3.63534C7.92574 2.93275 12.3907 3.09489 14.47 3.09489C16.5494 3.09489 21.0207 2.93876 22.896 3.63534C24.1461 4.10374 25.1093 5.0105 25.6132 6.1935C26.3595 7.96499 26.1872 12.1685 26.1872 14.1262C26.1872 16.0838 26.3595 20.2934 25.6132 22.0588Z"/>
+                                    </mask>
+                                    <path d="M14.47 7.22637C10.4133 7.22637 7.14119 10.307 7.14119 14.1262C7.14119 17.9454 10.4133 21.026 14.47 21.026C18.5267 21.026 21.7989 17.9454 21.7989 14.1262C21.7989 10.307 18.5267 7.22637 14.47 7.22637ZM14.47 18.6119C11.8485 18.6119 9.70533 16.6003 9.70533 14.1262C9.70533 11.6521 11.8421 9.6404 14.47 9.6404C17.098 9.6404 19.2347 11.6521 19.2347 14.1262C19.2347 16.6003 17.0916 18.6119 14.47 18.6119ZM23.8081 6.94413C23.8081 7.83888 23.0427 8.55348 22.0987 8.55348C21.1483 8.55348 20.3892 7.83288 20.3892 6.94413C20.3892 6.05538 21.1546 5.33477 22.0987 5.33477C23.0427 5.33477 23.8081 6.05538 23.8081 6.94413ZM28.6621 8.5775C28.5536 6.42169 28.0306 4.51208 26.3531 2.93876C24.6819 1.36543 22.6536 0.87302 20.3637 0.764929C18.0037 0.638823 10.93 0.638823 8.56997 0.764929C6.28648 0.867015 4.25813 1.35943 2.5806 2.93275C0.90307 4.50608 0.386415 6.41568 0.271603 8.5715C0.137656 10.7934 0.137656 17.453 0.271603 19.6748C0.380037 21.8307 0.90307 23.7403 2.5806 25.3136C4.25813 26.8869 6.2801 27.3793 8.56997 27.4874C10.93 27.6135 18.0037 27.6135 20.3637 27.4874C22.6536 27.3853 24.6819 26.8929 26.3531 25.3136C28.0242 23.7403 28.5473 21.8307 28.6621 19.6748C28.796 17.453 28.796 10.7994 28.6621 8.5775ZM25.6132 22.0588C25.1157 23.2358 24.1525 24.1426 22.896 24.617C21.0143 25.3196 16.5494 25.1575 14.47 25.1575C12.3907 25.1575 7.91936 25.3136 6.0441 24.617C4.79392 24.1486 3.83078 23.2418 3.32688 22.0588C2.5806 20.2874 2.75282 16.0838 2.75282 14.1262C2.75282 12.1685 2.58698 7.95898 3.32688 6.1935C3.8244 5.01651 4.78754 4.10974 6.0441 3.63534C7.92574 2.93275 12.3907 3.09489 14.47 3.09489C16.5494 3.09489 21.0207 2.93876 22.896 3.63534C24.1461 4.10374 25.1093 5.0105 25.6132 6.1935C26.3595 7.96499 26.1872 12.1685 26.1872 14.1262C26.1872 16.0838 26.3595 20.2934 25.6132 22.0588Z" fill="#F8F8F8" stroke="#F8F8F8" stroke-width="0.0976562" mask="url(#path-1-inside-1_305_57)"/>
+                                </svg>
+                            </a>
+                            <p>Instagram:</p>
+                            <a href="https://instagram.com" target="_blank">@SimonSounds</a>
 
+                        </div>
+                        <div class="facebook">
+                            <a href="https://facebook.com" target="_blank">
+                                <svg width="27" height="27" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.1465 14.0973H16.7838V11.3263C16.7838 10.7414 16.936 10.1667 17.3295 9.73836C17.7226 9.31045 18.3598 9.02497 19.3375 9.02497H21.3321H21.3565V9.00056V5.33748V5.31667L21.336 5.31337L21.3321 5.33748L21.3359 5.31337L21.3359 5.31336L21.3356 5.31332L21.3346 5.31316L21.3307 5.31253L21.3151 5.31009L21.2545 5.30085C21.2016 5.29289 21.124 5.28152 21.0255 5.26788C20.8286 5.24061 20.548 5.20424 20.2132 5.16788C19.5438 5.09517 18.6575 5.02242 17.7908 5.02242C15.9789 5.02242 14.4786 5.53914 13.4312 6.52635C12.3835 7.51376 11.7917 8.96914 11.7917 10.8405V14.0973H7.79765H7.77324V14.1217V18.4267V18.4511H7.79765H11.7917V27.5486H3.06166C2.25567 27.5486 1.48297 27.2471 0.913473 26.711C0.344027 26.1749 0.0244141 25.4481 0.0244141 24.6906V3.55277C0.0244141 2.79527 0.344027 2.06848 0.913473 1.53237C1.48297 0.99621 2.25567 0.694763 3.06166 0.694763H25.5138C26.3198 0.694763 27.0925 0.99621 27.662 1.53237C28.2314 2.06848 28.551 2.79527 28.551 3.55277V24.6906C28.551 25.4481 28.2314 26.1749 27.662 26.711C27.0925 27.2471 26.3198 27.5486 25.5138 27.5486H16.7838V18.4511H20.4448H20.4656L20.4689 18.4306L21.1706 14.1256L21.1752 14.0973H21.1465Z" fill="#F8F8F8" stroke="#F8F8F8" stroke-width="0.0488281"/>
+                                </svg>
+                            </a>
+                            <p>Facebook:<p>
+                            <a href="https://facebook.com" target="_blank">Simon Sounds Cooperative</a>
+
+                        </div>
+                        <div class="x">
+                            <a href="https://x.com" target="_blank">
+                                <svg width="40" height="30" viewBox="10 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="40" height="35" fill="url(#pattern0_305_61)"/>
+                                    <defs>
+                                    <pattern id="pattern0_305_61" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_305_61" transform="matrix(0.00304878 0 0 0.00348432 0 -0.0261324)"/>
+                                    </pattern>
+                                    <image id="image0_305_61" width="328" height="302" xlink:href="data:image/png;base64,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"/>
+                                    </defs>
+                                </svg>
+                            </a>  
+                            <p>X (formerly twitter):&nbsp;&nbsp;</p>
+                            <a href="https://x.com" target="_blank">@SimonSounds</a>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    Sign Up for Our Newsletter: Be the first to know about upcoming workshops, special offers, and local music news! Subscribe on our website or drop by the store to join our mailing list.
+                </li>
+            </ul>
+            <p>Together, lets make the Pioneer Valley a hub for creativity and collaboration!</p>
+        </div>
+    </div>
+<div>
+
+
+    <button href="" class="orange-button music-button">
+        Subscribe
+    </button>
+    <script>
+        const button = document.getElementById('music-button');
+        const notes = ['🎵', '🎶', '♫', '♬', '♩'];
+    
+        button.addEventListener('click', () => {
+          const note = document.createElement('div');
+          note.classList.add('note');
+          note.textContent = notes[Math.floor(Math.random() * notes.length)];
+          
+          // Randomize position around the button
+          const x = button.offsetLeft + button.offsetWidth / 2 + (Math.random() * 100 - 50);
+          const y = button.offsetTop;
+    
+          note.style.left = `${x}px`;
+          note.style.top = `${y}px`;
+    
+          // Add the note to the body
+          document.body.appendChild(note);
+    
+          // Remove the note after animation
+          note.addEventListener('animationend', () => {
+            note.remove();
+          });
+        });
+      </script>
     </main>
     
 </body>

@@ -18,3 +18,29 @@ document.querySelectorAll('.dropdown-block').forEach((dropdown) => {
         }
     });
 });
+
+    const button = document.getElementById('music-button');
+    const notes = ['🎵', '🎶', '♫', '♬', '♩'];
+
+    button.addEventListener('click', () => {
+      const note = document.createElement('div');
+      note.classList.add('note');
+      note.textContent = notes[Math.floor(Math.random() * notes.length)];
+      
+      // Randomize position around the button
+      const x = button.offsetLeft + button.offsetWidth / 2 + (Math.random() * 100 - 50);
+      const y = button.offsetTop;
+
+      note.style.left = `${x}px`;
+      note.style.top = `${y}px`;
+
+      // Add the note to the body
+      document.body.appendChild(note);
+
+      // Remove the note after animation
+      note.addEventListener('animationend', () => {
+        note.remove();
+      });
+    });
+
+
