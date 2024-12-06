@@ -29,7 +29,14 @@ h1, h2 {
     text-align: center;
     color: #F8F8F8;
 }
+.title h1 {
+    margin-bottom: 0;
+}
 
+.title h2 {
+    margin-top: 1%;
+    font-style: italic;
+}
 
 .heading {
     display: flex;
@@ -42,7 +49,7 @@ h1, h2 {
     margin-top: 30px;
 }
 .title {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .welcome {
     max-width: 40%;
@@ -83,6 +90,30 @@ nav {
     0px -10px 15px rgba(0, 0, 0, 0.1);
 }
 
+footer {
+    position: fixed;
+    bottom: 0px;
+    z-index: 1000;
+    display: flex;
+    width: 100%;
+    height: 35px;
+    background-color: var(--accent);
+    color: white;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+footer > * {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* .phone {
+    display: flex;
+    align-items: center;
+} */
+
 /* nav:hover {
     background-color: #3b26a5;
     transition: background-color 10s ease-in-out; 
@@ -93,9 +124,13 @@ nav {
     display:flex;
     align-items: center;
     justify-content: space-around;
-    width: 20%;
+    width: 15%;
     padding-right: 15px;
     /* background-color:white; */
+}
+
+svg {
+    transform: translate(0px, 1px);
 }
 
 nav ul {
@@ -445,6 +480,11 @@ nav ul li a {
 .dropdown-arrow {
     transition: transform 0.3s ease; /* Smooth rotation */
 }
+
+.dropper-label {
+    padding: 0;
+    margin: 0;
+}
   
   /* Hidden content by default */
 .dropdown-content {
@@ -471,8 +511,12 @@ nav ul li a {
     justify-content: space-between;
     align-items: flex-start;
     gap: 8px;
-    margin-top: 5%;
-    margin-left: 10%;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.roster {
+    margin-bottom: 2%;
 }
 
 .responsive-img {
