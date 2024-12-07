@@ -96,7 +96,7 @@ footer {
     z-index: 1000;
     display: flex;
     width: 100%;
-    height: 35px;
+    height: 33px;
     background-color: var(--accent);
     color: white;
     align-items: center;
@@ -510,13 +510,14 @@ nav ul li a {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 8px;
+    gap: 5px;
     margin-top: 2%;
     margin-left: 5%;
 }
 
 .roster {
     margin-bottom: 2%;
+    margin-top: 0;
 }
 
 .responsive-img {
@@ -541,8 +542,62 @@ div.instructor {
     font-size: 1.1rem;
 }
 
+.school-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+table {
+    position: fixed;
+    right: 8%;
+    width: 28%;
+    border-collapse: collapse;
+    height: 20%;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 0;
+}
+th, td {
+    padding: 0px;
+    text-align: center;
+    width: 10px;
+    height: 5px;
+}
 
+.store-container {
+    width: 70%;
+}
+
+.store-img {
+    height: 120px;
+    width: 180px;
+    opacity: .7;
+}
+
+.store-image-container {
+    /* background-color: white; */
+    width: 180px;
+    right: 2%
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.store-img-caption {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: var(--accent);
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -800%);
+    font-size: 1.2rem;
+}
 
 @media (max-width: 800px) {
     .slider-wrapper .slider-item .slide-content > * {
