@@ -199,68 +199,77 @@
         </div>
     </div>
 </div>
-    <table>
-        <tr>
-            <th>Lesson Rates</th>
-            <th>Ongoing</th>
-            <th>Single Lesson</th>
-        </tr>
-        <tr>
-            <td>30 minutes</td>
-            <td>$30</td>
-            <td>$35</td>
-        </tr>
-        <tr>
-            <td>45 minutes</td>
-            <td>$45</td>
-            <td>$50</td>
-        </tr>
-        <tr>
-            <td>60 minutes</td>
-            <td>$60</td>
-            <td>$65</td>
-        </tr>
-    </table>
+    <div class="school-fixed">
+        <p class="book-conditions">Read our cancelation policies
+            <sup class="hover-box">?
+                    <span class="tooltip">• Email us if you need to cancel. The more notice the better!<br>&nbsp;&nbsp;&nbsp;Absences with less than 24 hours notice to either the teacher or Music School are subject to charge.<br><br>
+                        • 2 excused (no charge) absences are allowed, per 4-month period. Credits are applied to next month's bill.<br><br>
+                    </span>
+            </sup>
+        </p>
+        <table>
+            <tr>
+                <th>Lesson Rates</th>
+                <th>Ongoing</th>
+                <th>Single Lesson</th>
+            </tr>
+            <tr>
+                <td>30 minutes</td>
+                <td>$30</td>
+                <td>$35</td>
+            </tr>
+            <tr>
+                <td>45 minutes</td>
+                <td>$45</td>
+                <td>$50</td>
+            </tr>
+            <tr>
+                <td>60 minutes</td>
+                <td>$60</td>
+                <td>$65</td>
+            </tr>
+        </table>
 
-<div class="book-container">
+        <div class="book-container">
 
-    <form id="selectionForm">
-        <div class="pick-instrument">
-            <label for="instrument">Pick your Instrument</label>
-            <select id="instrument" name="instrument" onchange="updateInstructors()">
-                <option value="" selected>Select an instrument</option>
-                <option value="guitar">Guitar</option>
-                <option value="bass">Bass</option>
-                <option value="drums">Drums/Percussion</option>
-                <option value="Piano/Keys">Piano/Keys</option>
-                <option value="wind">Woodwind/Brass</option>
-                <option value="vocals">Vocals</option>
+            <form id="selectionForm">
+                <div class="pick-instrument">
+                    <label for="instrument">Pick your Instrument&nbsp;&nbsp;&nbsp;</label>
+                    <select id="instrument" name="instrument" onchange="updateInstructors()">
+                        <option value="" selected>Select an instrument</option>
+                        <option value="guitar">Guitar</option>
+                        <option value="bass">Bass</option>
+                        <option value="drums">Drums/Percussion</option>
+                        <option value="Piano/Keys">Piano/Keys</option>
+                        <option value="wind">Woodwind/Brass</option>
+                        <option value="vocals">Vocals</option>
 
-            </select>
+                    </select>
+                </div>
+                <div class="pick-teacher">
+                    <label for="instructor">Pick your Instructor&nbsp;&nbsp;&nbsp;</label>
+                    <select id="instructor" name="instructor">
+                        <option value="" selected>Select an instructor</option>    
+                    </select>
+                </div>
+                <div class="name">
+                    <label for="name">Your Name&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>   
+                <div class="name">
+                    <label for="email">Your Email&nbsp;&nbsp;&nbsp;</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="name">
+                    <label for="dateTime">Preferred Date & Time&nbsp;&nbsp;&nbsp;</label>
+                    <input type="datetime-local" id="dateTime" name="dateTime" required>
+                </div>
+
+
+            </form>
+            <button class="orange-button action-button" id="submitButton">Book</button>
         </div>
-        <div class="pick-teacher">
-            <label for="instructor">Pick your Instructor</label>
-            <select id="instructor" name="instructor">
-                <option value="" selected>Select an instructor</option>        </select>
-            <br><br>
-        </div>
-        <div class="name">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        </div>   
-        <div class="name">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-        <div class="name">
-            <label for="dateTime">Preferred Date & Time</label>
-            <input type="datetime-local" id="dateTime" name="dateTime" required>
-        </div>
-
-
-    </form>
-    <button class="orange-button action-button" id="submitButton">Book</button>
-</div>
+    </div>
 </div>
 
     

@@ -276,18 +276,11 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         const firstName = document.getElementById("firstName").value;
         const lastName = document.getElementById("lastName").value;
 
-        const alertBox = document.getElementById("alertBox");
-
         // Check if all required fields are filled
         if (email && firstName && lastName) {
-            alertBox.textContent = `You have been added to our newsletter, ${firstName}!`;
-            alertBox.classList.add("success");
-            alertBox.style.display = "block";
+            alert(`You have been added to our newsletter, ${firstName}!`);
         } else {
-            alertBox.textContent = "Please fill in all fields.";
-            alertBox.classList.remove("success");
-            alertBox.classList.add("error");
-            alertBox.style.display = "block";
+            alert("Please fill in all fields.");
         }
     });
 </script>

@@ -2,6 +2,7 @@
     --background: #0B192C;
     --accent: #D2612D;
     --accent2: #1E3E62;
+    --blue: #76e6fd;
 }
 
   * {
@@ -539,12 +540,13 @@ input {
     align-items: flex-start;
     gap: 5px;
     margin-top: 2%;
-    margin-left: 5%;
+    margin-left: 7%;
 }
 
 .roster {
     margin-bottom: 2%;
     margin-top: 0;
+    margin-left: 10px;
 }
 
 .responsive-img {
@@ -565,6 +567,7 @@ div.instructor {
     margin-top: 15px;
 }
 
+
 .italic {
     font-size: 1.1rem;
 }
@@ -575,17 +578,64 @@ div.instructor {
     justify-content: space-between;
 }
 
+.school-fixed {
+    /* position: fixed; */
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.book-conditions {
+    position: fixed;
+    right: 10%;
+    top: 25%;
+}
+
+.hover-box {
+    position: relative; /* Enable tooltip positioning */
+    cursor: pointer; /* Make it clear that it's interactive */
+    color: var(--blue);
+    font-weight: 900;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 125%; /* Position above the superscript */
+    left: 50%; /* Center the tooltip */
+    transform: translateX(-90%);
+    background-color: #333; /* Dark background for tooltip */
+    color: #fff; /* Light text for contrast */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent wrapping */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+    pointer-events: none; /* Prevent interference with hover */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.hover-box:hover .tooltip {
+    opacity: 1; /* Make tooltip visible */
+    visibility: visible;
+}
+
 table {
     position: fixed;
-    right: 8%;
+    right: 10%;
     width: 28%;
     border-collapse: collapse;
     height: 20%;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+    top: 32%;
 }
-table, th, td {
-    border: 1px solid black;
+/* table, th, td {
+    /* border: 1px solid white; 
     padding: 0;
-}
+} */
 th, td {
     padding: 0px;
     text-align: center;
@@ -598,16 +648,18 @@ th, td {
     flex-direction: column;
     align-items: center;
     position: fixed;
-    top: 50%;
-    right: 8%;
-    width: 28%;
-    gap: 10px
+    top: 55%;
+    right: 3.5%;
+    width: 40%;
+    gap: 10px;
+    padding: 0;
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: flex-end;
 }
 
 #message {
@@ -628,7 +680,24 @@ option {
 }
 
 .store-container {
-    width: 70%;
+    width: 60%;
+    flex-direction: row;
+}
+
+.store-body {
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-around;
+}
+
+p.store-text {
+    width: 30%;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+#submitButton {
+    margin-top: 10px;
 }
 
 .store-img {
@@ -640,7 +709,6 @@ option {
 .store-image-container {
     /* background-color: white; */
     width: 160px;
-    right: 2%
 }
 
 .row {
@@ -653,11 +721,18 @@ option {
     position: relative;
     width: 100%;
     text-align: center;
-    background-color: var(--accent);
+    /* background-color: #1279BE; */
+    background-color: rgba(210,97,45,.95);
     top: 100%;
     left: 50%;
-    transform: translate(-50%, -720%);
-    font-size: 1.2rem;
+    transform: translate(-50%, -180%);
+    font-size: 1.15rem;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.store-image-container a {
+    text-decoration: none;
 }
 
 @media (max-width: 800px) {
