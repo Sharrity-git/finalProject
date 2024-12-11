@@ -221,10 +221,102 @@
             <td>$65</td>
         </tr>
     </table>
+
+<div class="book-container">
+
+    <form id="selectionForm">
+        <div class="pick-instrument">
+            <label for="instrument">Pick your Instrument</label>
+            <select id="instrument" name="instrument" onchange="updateInstructors()">
+                <option value="" selected>Select an instrument</option>
+                <option value="guitar">Guitar</option>
+                <option value="bass">Bass</option>
+                <option value="drums">Drums/Percussion</option>
+                <option value="Piano/Keys">Piano/Keys</option>
+                <option value="wind">Woodwind/Brass</option>
+                <option value="vocals">Vocals</option>
+
+            </select>
+        </div>
+        <div class="pick-teacher">
+            <label for="instructor">Pick your Instructor</label>
+            <select id="instructor" name="instructor">
+                <option value="" selected>Select an instructor</option>        </select>
+            <br><br>
+        </div>
+        <div class="name">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>   
+        <div class="name">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="name">
+            <label for="dateTime">Preferred Date & Time</label>
+            <input type="datetime-local" id="dateTime" name="dateTime" required>
+        </div>
+
+
+    </form>
+    <button class="orange-button action-button" id="submitButton">Book</button>
+</div>
 </div>
 
     
+<script>
+    // Instructors mapped to instruments
+    const instructors = {
+        guitar: ["Tony Nice", "Steven Rye"],
+        bass: ["Rocco Pastorius"],
+        drums: ["Mark Portnoy"],
+        piano: ["Felton Sean", "Herbert Hitchcock"],
+        wind: ["Kyle Davis"],
+        vocals: ["Shawna Del Rey", "Robert Grant"]
+    };
 
+    function updateInstructors() {
+        // Get selected instrument
+        const instrument = document.getElementById("instrument").value;
+        const instructorDropdown = document.getElementById("instructor");
+
+        // Clear current options
+        instructorDropdown.innerHTML = '<option value="" selected>Select an instructor</option>';
+
+        // Populate new options if an instrument is selected
+        if (instrument && instructors[instrument]) {
+            instructors[instrument].forEach((instructor) => {
+                const option = document.createElement("option");
+                option.value = instructor.toLowerCase();
+                option.textContent = instructor;
+                instructorDropdown.appendChild(option);
+            });
+        }
+    }
+        // Handle the Book button click
+        document.getElementById("submitButton").addEventListener("click", function() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const dateTime = document.getElementById("dateTime").value;
+            const instrument = document.getElementById("instrument").value;
+            const instructor = document.getElementById("instructor").value;
+
+            // Validate inputs
+            if (name && email && dateTime && instrument && instructor) {
+                // Show an alert with booking information
+                alert(`
+                    Thank you, ${name}! 
+                    You booked a ${instrument} lesson with ${instructor}.
+                    Your lesson is scheduled for ${new Date(dateTime).toLocaleString()}.
+                    A confirmation email will be sent to ${email}.
+                `.trim());
+            } else {
+                // Show an alert if any field is missing
+                alert("Please fill out all the fields.");
+            }
+        });
+
+</script>
       <script src="/scripts/script.js"></script>
     </main>
     <footer>

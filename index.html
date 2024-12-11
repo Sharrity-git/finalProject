@@ -186,32 +186,48 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     </div>
 <div>
 
-
-    <button href="" class="orange-button music-button">
+<div class="newsletter">
+    <div class="newsletter-input">
+        <div class="input-label">
+            Email*
+            <input type="email" id="email-newsletter" name="email" placeholder="Enter email required">
+        </div>
+        <div class="input-label">
+            First Name
+            <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+        </div>
+        <div class="input-label">
+            Last Name
+            <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+        </div>
+    </div>
+    <button type="button" class="orange-button action-button" id="subscribeButton">
         Subscribe
     </button>
-    <script>
-        const button = document.getElementById('music-button');
-        const notes = ['🎵', '🎶', '♫', '♬', '♩'];
-    
-        button.addEventListener('click', () => {
-          const note = document.createElement('div');
-          note.classList.add('note');
-          note.textContent = notes[Math.floor(Math.random() * notes.length)];
-          
-          // Randomize position around the button
-          const x = button.offsetLeft + button.offsetWidth / 2 + (Math.random() * 100 - 50);
-          const y = button.offsetTop;
-    
-          note.style.left = `${x}px`;
-          note.style.top = `${y}px`;
-    
-          // Add the note to the body
-          document.body.appendChild(note);
-    
-          // Remove the note after animation
-          note.addEventListener('animationend', () => {
-            note.remove();
-          });
-        });
-      </script>
+</div>
+<div id="alertBox" class="alert-box" style="display: none;"></div>
+
+
+
+<script>
+    // Handle the Subscribe button click
+    document.getElementById("subscribeButton").addEventListener("click", function() {
+        const email = document.getElementById("email-newsletter").value;
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+
+        const alertBox = document.getElementById("alertBox");
+
+        // Check if all required fields are filled
+        if (email && firstName && lastName) {
+            alertBox.textContent = `You have been added to our newsletter, ${firstName}!`;
+            alertBox.classList.add("success");
+            alertBox.style.display = "block";
+        } else {
+            alertBox.textContent = "Please fill in all fields.";
+            alertBox.classList.remove("success");
+            alertBox.classList.add("error");
+            alertBox.style.display = "block";
+        }
+    });
+</script>
