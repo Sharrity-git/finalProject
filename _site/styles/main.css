@@ -2,7 +2,7 @@
     --background: #0B192C;
     --accent: #D2612D;
     --accent2: #1E3E62;
-    --blue: #76e6fd;
+    --blue: #9beffa;
 }
 
   * {
@@ -18,10 +18,9 @@ body {
 }
 
 .bg {
-    /* background-image: url("/images/store-front-faded.png"); */
     background-image: url("/images/background-norad.png");
     background-position: 50% 50%;
-    height: 600px;
+    height: 92vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: darken;
@@ -40,6 +39,10 @@ h1, h2 {
 }
 
 .heading {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,6 +51,8 @@ h1, h2 {
     position: relative;
     z-index: 5;
     margin-top: 30px;
+    /* padding-bottom: 40px; */
+    width: 98%;
 }
 .title {
     margin-top: 70px;
@@ -109,17 +114,6 @@ footer > * {
     flex-direction: row;
     align-items: center;
 }
-
-/* .phone {
-    display: flex;
-    align-items: center;
-} */
-
-/* nav:hover {
-    background-color: #3b26a5;
-    transition: background-color 10s ease-in-out; 
-} */
-
 
 .nav-media {
     display:flex;
@@ -235,6 +229,8 @@ nav ul li a {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    clip-path: inset(0 13px);
 }
 
 .slider-wrapper .slider-item {
@@ -366,12 +362,12 @@ nav ul li a {
 
   .slider-navigation svg#slider-left {
     position: relative;
-    left: 20px; 
+    left: 12px; 
 }
 
 .slider-navigation svg#slider-right {
     position: relative;
-    right: 20px; 
+    right: 12px; 
     outline: none;
 }
 
@@ -662,6 +658,12 @@ form {
     align-items: flex-end;
 }
 
+#dateTimeError {
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+
 #message {
     margin-top: 20px;
     color: black;
@@ -687,13 +689,19 @@ option {
 .store-body {
     display: flex;
     margin-left: 20px;
+    margin-top: 40px;
     justify-content: space-around;
 }
 
 p.store-text {
     width: 30%;
     line-height: 30px;
-    font-size: 18px;
+    font-size: 17.8px;
+    text-align: justify;
+}
+
+.reverb {
+    color: var(--blue)
 }
 
 #submitButton {
@@ -703,7 +711,11 @@ p.store-text {
 .store-img {
     height: 105px;
     width: 160px;
-    opacity: .7;
+    opacity: .8;
+}
+
+.drum-img, .horn-img {
+    opacity: .75 !important;
 }
 
 .store-image-container {
@@ -733,6 +745,84 @@ p.store-text {
 
 .store-image-container a {
     text-decoration: none;
+}
+
+.repairs-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.repairs-info {
+    text-align: center;
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.repair-person {
+    margin-top: 0;
+}
+
+.repairs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    width: 80%;
+}
+
+.repair-text {
+    width: 60%;
+    margin: 0;
+}
+
+.repair-dropdown-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.repair-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    width: 70%;
+}
+
+.inquire-input-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.inquiry {
+    position: relative;
+    height: 5rem;
+    width: 20rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: black;
+
+}
+
+.inquiry::placeholder {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: .5rem;
+    transform: translateY(5px); /* Optional: Adjusts vertical positioning */
+    color: grey; 
+
 }
 
 @media (max-width: 800px) {
