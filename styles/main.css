@@ -20,7 +20,7 @@ body {
 .bg {
     background-image: url("/images/background-norad.png");
     background-position: 50% 50%;
-    height: 92vh;
+    height: 91vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: darken;
@@ -489,7 +489,18 @@ input {
 .newsletter-input {
     display: flex;
     gap: 15px;
+    margin-bottom: 15px;
 }
+
+.newsletter-signup {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#subscribeButton {
+    font-size: 20px;
+}
+
 .line-breaker {
     padding-top: 15px;
     padding-bottom: 15px;
