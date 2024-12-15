@@ -221,7 +221,7 @@ nav ul li a {
   } 
 
    .orange-button {
-    display: block;
+    display: inline-block;
     padding: 4px 25px;
     font-size: 1em;
     font-weight: 550;
@@ -413,6 +413,10 @@ nav ul li a {
     align-items: flex-start;
 }
 
+.values {
+    margin-bottom: 32px;
+}
+
 .section-text {
     display: flex;
     flex-direction: column;
@@ -428,7 +432,7 @@ nav ul li a {
 
 .values-text {
     width: 40%;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
 }
 
 .community-text {
