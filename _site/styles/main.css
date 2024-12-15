@@ -73,9 +73,34 @@ h1, h2 {
     gap: 8px;
 }
 
+.gibson-group-big {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 8px;
+    background-color: var(--accent);
+    width: 30%;
+    border-radius: 10px;
+    font-size: 12px;
+    position: absolute;
+    top:40px;
+    right: 30px;
+}
+
 .logo {
     max-height: 130px;
     z-index: 5;
+}
+
+.logo-link {
+    position: absolute;
+    max-height: 130px;
+    z-index: 5;
+    top: 58px;
+    left: 165px;
 }
 
 nav {
@@ -210,12 +235,12 @@ nav ul li a {
     max-width: fit-content;
 }
   .orange-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: background-color .3s ease-out color .3s ease-out;
   } 
 
   .orange-button:active {
-    transform: scale(.9);
+    transform: scale(.95);
   }
 
 .slider-container {
@@ -403,7 +428,7 @@ nav ul li a {
 
 .values-text {
     width: 40%;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 .community-text {
@@ -427,7 +452,7 @@ nav ul li a {
     height: auto;
     width: 35%;
     right: 10.1%;
-    margin-top: 50px;
+    margin-top: 62px;
     border-radius: 4px;
 }
 
@@ -436,7 +461,7 @@ nav ul li a {
     height: auto;
     width: 40%;
     right: 10.1%;
-    margin-top: 15px;
+    margin-top: 27px;
     border-radius: 4px;
 }
 
@@ -575,7 +600,7 @@ input {
     justify-content: space-between;
     align-items: flex-start;
     gap: 5px;
-    margin-top: 2%;
+    margin-top: 22px;
     margin-left: 7%;
 }
 
@@ -703,6 +728,7 @@ form {
     margin-bottom: 0;
     padding: 0;
     margin-top: 10px;
+    text-align: center;
 }
 
 #message {
@@ -735,6 +761,7 @@ option {
 }
 
 p.store-text {
+    margin-top: 40px;
     width: 30%;
     line-height: 30px;
     font-size: 17.8px;
@@ -753,6 +780,7 @@ p.store-text {
     height: 105px;
     width: 160px;
     opacity: .8;
+    border-radius: 5px;
 }
 
 .drum-img, .horn-img {
@@ -766,8 +794,7 @@ p.store-text {
 
 .row {
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: space-around;   
 }
 
 .store-img-caption {
@@ -775,7 +802,8 @@ p.store-text {
     width: 100%;
     text-align: center;
     /* background-color: #1279BE; */
-    background-color: rgba(210,97,45,.95);
+    /* background-color: rgba(210,97,45,.95); */
+    background-color: var(--accent);
     top: 100%;
     left: 50%;
     transform: translate(-50%, -180%);
@@ -786,6 +814,12 @@ p.store-text {
 
 .store-image-container a {
     text-decoration: none;
+}
+
+.store-image-container:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+    /* transform: 3d; */
 }
 
 .repairs-body{
@@ -895,6 +929,7 @@ p.store-text {
     .gibson-group, .logo, .byline {
         display: none;
     }
+
     .Welcome{
         font-size: 1rem;
         top: 5px;
@@ -928,9 +963,6 @@ p.store-text {
         width: 100%;
         overflow: hidden;
         padding-top:0px;
-        /* background-image: url("/images/store-front-faded.png");
-        background-position: 50% 90%; */
-        /* background-color: #0B192C; */
         display: flex;
         justify-content: space-between;
         align-items: center;
